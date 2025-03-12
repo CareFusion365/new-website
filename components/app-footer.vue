@@ -1,0 +1,74 @@
+<template>
+  <div class="AppFooter bg-[var(--bg-dark)] text-white section-x-padding pt-32">
+    <div class="flex gap-4">
+      <div class="flex-[2]">
+        <h3 class="text-2xl font-bold mb-8">CareFusion</h3>
+        <p class="w-3/4">
+          Carefusion is a next-gen, AI-powered healthcare service assistant that
+          links patient EMR to healthcare practitioners with ease.
+        </p>
+      </div>
+      <div class="flex-1">
+        <h5 class="text-muted-foreground uppercase mb-8 font-semibold">
+          Quick Links
+        </h5>
+        <ul class="list-none">
+          <li><a href="#" class="hover:underline">Home</a></li>
+          <li><a href="#" class="hover:underline">Find a Doctor</a></li>
+          <li><a href="#" class="hover:underline">Sevices</a></li>
+          <li><a href="#" class="hover:underline">About</a></li>
+        </ul>
+      </div>
+      <div class="flex-1">
+        <h5 class="text-muted-foreground uppercase mb-8 font-semibold">
+          Services
+        </h5>
+        <ul class="list-none">
+          <li><a href="#" class="hover:underline">Cardiology</a></li>
+          <li><a href="#" class="hover:underline">Dental</a></li>
+          <li><a href="#" class="hover:underline">Primary Care</a></li>
+          <li><a href="#" class="hover:underline">Optometry</a></li>
+          <li><a href="#" class="hover:underline">Gynaecology</a></li>
+          <li>
+            <a href="#" class="hover:underline">Ear, Nose &amp; Throat</a>
+          </li>
+          <li><a href="#" class="hover:underline">Dermatology</a></li>
+          <li><a href="#" class="hover:underline">Pediatrics</a></li>
+        </ul>
+      </div>
+      <div class="flex-1">
+        <h5 class="text-muted-foreground uppercase mb-8 font-semibold">
+          Company
+        </h5>
+        <ul class="list-none">
+          <li><a href="#" class="hover:underline">Contact Us</a></li>
+          <li><a href="#" class="hover:underline">Privacy Policy</a></li>
+          <li>
+            <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+          </li>
+        </ul>
+      </div>
+      <div class="flex-1">
+        <h5 class="text-muted-foreground uppercase mb-8 font-semibold">
+          Business
+        </h5>
+        <ul class="list-none">
+          <li><a href="#" class="hover:underline">Partners</a></li>
+        </ul>
+      </div>
+      <div class="flex-1">
+        <h5 class="text-muted-foreground uppercase mb-8 font-semibold">
+          Socials
+        </h5>
+        <ul class="list-none">
+          <li><a href="#" class="hover:underline">LinkedIn</a></li>
+          <li><a href="#" class="hover:underline">X (Formerly Twitter)</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr class="my-16" />
+    <div class="text-center pb-16">
+      Copyright CareFusion {{ new Date().getFullYear() }}. All rights reserved.
+    </div>
+  </div>
+</template>
