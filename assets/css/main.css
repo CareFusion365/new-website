@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+
 :root {
   --bg-light: #E2E8F0;
   --bg-dark: #334155;
@@ -5,4 +7,11 @@
 
 * {
   box-sizing: border-box;
+}
+
+body {
+  font-family: "Geist", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
 }
