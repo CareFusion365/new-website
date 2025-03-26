@@ -221,7 +221,7 @@ function updateCarousel() {
               and book your appointment in a few easy steps.
             </p>
           </div>
-          <div class="mt-16 flex">
+          <div class="mt-16 flex flex-col gap-4 md:flex-row md:gap-0">
             <div class="flex flex-col border-s px-4 border-[var(--bg-dark)]">
               <span class="bg-[var(--bg-light)] p-2 rounded-full w-fit">
                 <SearchIcon class="w-8 h-8 text-green-500" />
@@ -290,12 +290,12 @@ function updateCarousel() {
               At Carefusion365, we are committed to providing world-class
               healthcare with a patient-first approach.
             </p>
-            <div class="flex gap-4 mt-8">
+            <!-- <div class="flex gap-4 mt-8">
               <Button class="rounded-full p-6">Book a consultation</Button>
               <Button class="rounded-full p-6" variant="outline"
                 >Find a doctor</Button
               >
-            </div>
+            </div> -->
           </div>
           <div class="mt-16 flex flex-wrap gap-4 w-full">
             <div class="flex-1 flex flex-col p-4 bg-white rounded-2xl">
