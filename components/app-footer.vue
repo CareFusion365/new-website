@@ -1,7 +1,7 @@
 <template>
-  <div class="AppFooter bg-[var(--bg-dark)] text-white section-x-padding pt-32 flex flex-col items-center">
+  <div class="AppFooter bg-[var(--bg-dark)] text-white section-x-padding pt-16 lg:pt-32 flex flex-col items-center">
     <div class="container">
-      <div class="flex gap-4">
+      <div class="flex flex-wrap lg:flex-nowrap gap-4">
         <div class="flex-[2]">
           <h3 class="text-2xl font-bold mb-8">CareFusion</h3>
           <p class="w-3/4">
@@ -9,8 +9,9 @@
             links patient EMR to healthcare practitioners with ease.
           </p>
         </div>
+        <div class="basis-full lg:hidden"></div>
         <div class="flex-1">
-          <h5 class="text-muted-foreground uppercase mb-8 font-semibold">
+          <h5 class="text-muted-foreground uppercase mb-2 lg:mb-8 font-semibold">
             Quick Links
           </h5>
           <ul class="list-none">
@@ -21,7 +22,7 @@
           </ul>
         </div>
         <div class="flex-1">
-          <h5 class="text-muted-foreground uppercase mb-8 font-semibold">
+          <h5 class="text-muted-foreground uppercase mb-2 lg:mb-8 font-semibold">
             Services
           </h5>
           <ul class="list-none">
@@ -37,8 +38,9 @@
             <li><a href="#" class="hover:underline">Pediatrics</a></li>
           </ul>
         </div>
+        <div class="basis-full lg:hidden"></div>
         <div class="flex-1">
-          <h5 class="text-muted-foreground uppercase mb-8 font-semibold">
+          <h5 class="text-muted-foreground uppercase mb-2 lg:mb-8 font-semibold">
             Company
           </h5>
           <ul class="list-none">
@@ -50,15 +52,16 @@
           </ul>
         </div>
         <div class="flex-1">
-          <h5 class="text-muted-foreground uppercase mb-8 font-semibold">
+          <h5 class="text-muted-foreground uppercase mb-2 lg:mb-8 font-semibold">
             Business
           </h5>
           <ul class="list-none">
             <li><a href="#" class="hover:underline">Partners</a></li>
           </ul>
         </div>
+        <div class="basis-full lg:hidden"></div>
         <div class="flex-1">
-          <h5 class="text-muted-foreground uppercase mb-8 font-semibold">
+          <h5 class="text-muted-foreground uppercase mb-2 lg:mb-8 font-semibold">
             Socials
           </h5>
           <ul class="list-none">

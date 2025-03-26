@@ -71,7 +71,7 @@
 
 @layer components {
   .section-x-padding {
-    @apply px-16;
+    @apply px-4 lg:px-16;
   }
   .input-bg {
     background-color: #edf1f6 !important;

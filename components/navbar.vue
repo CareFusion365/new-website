@@ -32,13 +32,13 @@ function scrollToTop() {
 <template>
   <div
     ref="navbar"
-    class="Navbar fixed top-0 left-0 right-0 bg-white mx-16 mt-8 p-6 rounded-2xl z-10 flex flex-col justify-center transition-opacity"
+    class="Navbar fixed top-0 left-0 right-0 bg-white mx-4 lg:mx-16 mt-8 p-6 rounded-2xl z-10 flex flex-col justify-center transition-opacity"
     :class="{
       'shadow-md': y > 0,
     }"
   >
     <div
-      class="hidden container md:flex flex-nowrap justify-between items-center"
+      class="hidden container lg:flex flex-nowrap justify-between items-center"
     >
       <!-- logo -->
       <h4
@@ -81,7 +81,7 @@ function scrollToTop() {
     </div>
 
     <div
-      class="container md:hidden flex flex-nowrap justify-between items-center"
+      class="container lg:hidden flex flex-nowrap justify-between items-center"
     >
       <h4
         class="text-primary-heading text-2xl font-bold select-none cursor-default"
@@ -94,7 +94,7 @@ function scrollToTop() {
         <MenuIcon />
       </Button>
     </div>
-    <div class="container md:hidden transition-all duration-200"
+    <div class="container lg:hidden transition-all duration-200"
       :style="{
         maxHeight: isMobileMenuOpen ? '18rem' : '0',
         opacity: isMobileMenuOpen ? '1' : '0',

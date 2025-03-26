@@ -12,7 +12,7 @@ const props = defineProps<{
     <div class="bg-[var(--bg-light)] flex flex-col rounded-2xl">
       <NuxtImg
         :src="props.image"
-        class="h-[24rem] object-cover rounded-tr-2xl rounded-tl-2xl object-top"
+        class="h-[16rem] lg:h-[24rem] object-cover rounded-tr-2xl rounded-tl-2xl object-top"
         alt="healthcare service"
       />
       <div class="p-8">

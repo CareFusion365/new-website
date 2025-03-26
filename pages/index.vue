@@ -14,6 +14,7 @@ import {
 const carouselRef = useTemplateRef("carousel-items");
 const carouselPrevButtonRef = useTemplateRef("carousel-prev-button");
 const carouselNextButtonRef = useTemplateRef("carousel-next-button");
+const carouselNextButtonLgRef = useTemplateRef("carousel-next-button-lg");
 const currentIndex = ref(0);
 const slideWidth = ref(0);
 const totalSlides = ref(0);
@@ -25,18 +26,19 @@ onMounted(() => {
   )?.offsetWidth;
   totalSlides.value = window.document.querySelectorAll(".carousel-item").length;
 
-  carouselNextButtonRef.value!.addEventListener("click", () => {
-    if (currentIndex.value < totalSlides.value - 3) {
-      currentIndex.value += 1;
-      updateCarousel();
-    }
+  carouselPrevButtonRef.value!.addEventListener("click", () => {
+    currentIndex.value -= 1;
+    updateCarousel();
   });
 
-  carouselPrevButtonRef.value!.addEventListener("click", () => {
-    if (currentIndex.value > 0) {
-      currentIndex.value -= 1;
-      updateCarousel();
-    }
+  carouselNextButtonRef.value!.addEventListener("click", () => {
+    currentIndex.value += 1;
+    updateCarousel();
+  });
+
+  carouselNextButtonLgRef.value!.addEventListener("click", () => {
+    currentIndex.value += 3;
+    updateCarousel();
   });
 });
 
@@ -55,19 +57,80 @@ function updateCarousel() {
       <!-- hero section -->
       <section
         id="hero-section"
-        class="relative w-full h-dvh flex flex-nowrap section-x-padding !pe-0 bg-[var(--bg-light)] overflow-hidden"
+        class="relative w-full lg:h-dvh flex flex-col lg:flex-row flex-nowrap section-x-padding !pe-0 ps-0 lg:ps-16 bg-[var(--bg-light)] overflow-hidden"
       >
-        <div class="bg-[var(--bg-light)] flex-1"></div>
-        <div class="w-full h-full flex-1">
+        <div class="bg-[var(--bg-light)] flex-1">
+          <div class="block lg:hidden section-x-padding mt-40">
+            <h2
+              class="text-4xl font-semibol leading-[3rem] text-primary-heading"
+            >
+              Data-powered<br />healthcare
+            </h2>
+            <p class="mt-4">
+              Carefusion is a next-gen, AI-powered healthcare service assistant
+              that links patient EMR to healthcare practitioners with ease.
+            </p>
+
+            <div
+              class="bg-white rounded-3xl w-full p-4 mt-4 shadow-lg flex flex-col gap-4"
+            >
+              <div class="flex flex-col gap-4">
+                <div class="flex-1">
+                  <Label
+                    id="cta-label"
+                    for="cta-search"
+                    class="text-primary-heading"
+                    >What brings you here?</Label
+                  >
+                  <Input
+                    id="cta-search"
+                    aria-label="cta-label"
+                    class="mt-2 rounded-full input-bg shadow-none border-none p-6"
+                    placeholder="eg: Diabetes, HIV, lab test"
+                    :pre-icon="SearchIcon"
+                  />
+                </div>
+                <div class="flex-1">
+                  <Label
+                    id="cta-label"
+                    for="cta-search"
+                    class="text-primary-heading"
+                    >What brings you here?</Label
+                  >
+                  <Input
+                    id="cta-search"
+                    aria-label="cta-label"
+                    class="mt-2 rounded-full input-bg shadow-none border-none p-6"
+                    placeholder="Search location (Accra, Tema, Kumasi, etc)"
+                    :pre-icon="SearchIcon"
+                  />
+                </div>
+              </div>
+              <Button
+                class="p-6 bg-[#FACC15] rounded-full text-primary-heading hover:text-white font-bold w-1/2"
+                @click="
+                  () => {
+                    waitlistSectionRef?.scrollIntoView({
+                      behavior: 'smooth',
+                    });
+                  }
+                "
+              >
+                Join the Waitlist
+              </Button>
+            </div>
+          </div>
+        </div>
+        <div class="w-full h-fit lg:h-full flex-1 mt-8 lg:mt-0">
           <img
             src="~/assets/img/hero-bg.png"
-            class="h-full w-full object-cover object-top"
+            class="h-1/3 lg:h-full w-full object-cover object-top"
             alt="female doctor with stethoscope"
           />
         </div>
 
         <div
-          class="container absolute top-1/2 transform -translate-y-1/2 flex flex-col w-2/3"
+          class="hidden lg:flex flex-col w-2/3 container absolute top-1/2 transform -translate-y-1/2"
         >
           <h2
             class="text-6xl font-semibold leading-[4.5rem] text-primary-heading"
@@ -115,7 +178,7 @@ function updateCarousel() {
               </div>
             </div>
             <Button
-              class="p-6 bg-[#FACC15] rounded-full text-primary-heading hover:text-white font-bold w-1/4"
+              class="p-6 bg-[#FACC15] rounded-full text-primary-heading hover:text-white font-bold w-fit"
               @click="
                 () => {
                   waitlistSectionRef?.scrollIntoView({
@@ -131,15 +194,15 @@ function updateCarousel() {
       </section>
 
       <!-- services section -->
-      <section class="mt-32 section-x-padding flex justify-center">
+      <section class="mt-16 lg:mt-32 section-x-padding flex justify-center">
         <div class="container overflow-hidden">
           <div class="flex flex-col items-center text-center">
             <h3
-              class="text-4xl font-semibold leading-[3rem] text-primary-heading"
+              class="text-3xl lg:text-4xl lg:leading-[3rem] lg:font-semibold leading-[2rem] text-primary-heading"
             >
               Explore Our Featured<br />Medical Specialties
             </h3>
-            <p class="w-1/2 mt-8">
+            <p class="w-full lg:w-1/2 mt-8">
               Find the right care for your health needs. Our network of expert
               doctors covers a wide range of specialties, ensuring you get the
               best treatment for your condition.
@@ -150,35 +213,35 @@ function updateCarousel() {
               class="flex gap-4 transition-transform duration-300 ease-in-out pe-16"
               ref="carousel-items"
             >
-              <div class="carousel-item flex-shrink-0 w-1/3">
+              <div class="carousel-item flex-shrink-0 w-full lg:w-1/3">
                 <HealthcareServiceCard
                   title="Cardiology"
                   description="Expert heart care from top cardiologists to keep your heart healthy and strong."
                   image="/img/cardiology.png"
                 />
               </div>
-              <div class="carousel-item flex-shrink-0 w-1/3">
+              <div class="carousel-item flex-shrink-0 w-full lg:w-1/3">
                 <HealthcareServiceCard
                   title="Dental"
                   description="Quality dental care, from routine cleanings to advanced procedures for a healthy smile."
                   image="/img/dental.png"
                 />
               </div>
-              <div class="carousel-item flex-shrink-0 w-1/3">
+              <div class="carousel-item flex-shrink-0 w-full lg:w-1/3">
                 <HealthcareServiceCard
                   title="Optometry"
                   description="Vision exams, eyewear, and eye health treatments to keep your sight sharp."
                   image="/img/optometry.png"
                 />
               </div>
-              <div class="carousel-item flex-shrink-0 w-1/3">
+              <div class="carousel-item flex-shrink-0 w-full lg:w-1/3">
                 <HealthcareServiceCard
                   title="Gynaecology"
                   description="Comprehensive care for women’s health, from reproductive health to menopause."
                   image="/img/gynaecology.png"
                 />
               </div>
-              <div class="carousel-item flex-shrink-0 w-1/3">
+              <div class="carousel-item flex-shrink-0 w-full lg:w-1/3">
                 <HealthcareServiceCard
                   title="Ear, Nose & Throat"
                   description="Specialized care for ear, nose, and throat conditions, from allergies to hearing loss."
@@ -195,34 +258,43 @@ function updateCarousel() {
             </button>
             <button
               ref="carousel-next-button"
-              class="absolute top-1/2 transform -translate-y-1/2 shadow-md shadow-gray-600 right-4 bg-[var(--bg-dark)] bg-opacity-50 text-white p-2 w-12 h-12 rounded-full flex justify-center items-center"
+              class="absolute top-1/2 transform -translate-y-1/2 shadow-md shadow-gray-600 right-4 bg-[var(--bg-dark)] bg-opacity-50 text-white p-2 w-12 h-12 rounded-full flex justify-center items-center lg:hidden"
+              v-show="currentIndex < totalSlides - 1"
+            >
+              <ChevronRight />
+            </button>
+            <button
+              ref="carousel-next-button-lg"
+              class="hidden lg:flex absolute top-1/2 transform -translate-y-1/2 shadow-md shadow-gray-600 right-4 bg-[var(--bg-dark)] bg-opacity-50 text-white p-2 w-12 h-12 rounded-full justify-center items-center"
               v-show="currentIndex < totalSlides - 3"
             >
               <ChevronRight />
             </button>
           </div>
-          <div class="text-center mt-12">
-            <Button class="rounded-full" size="lg">Explore more services</Button>
+          <div class="text-center mt-8 lg:mt-12">
+            <Button class="rounded-full" size="lg"
+              >Explore more services</Button
+            >
           </div>
         </div>
       </section>
 
       <!-- how it works section -->
-      <section class="mt-32 section-x-padding flex justify-center">
+      <section class="mt-16 lg:mt-32 section-x-padding flex justify-center">
         <div class="container overflow-hidden">
           <div class="flex flex-col items-center text-center">
             <h3
-              class="text-4xl font-semibold leading-[3rem] text-primary-heading"
+              class="text-3xl lg:text-4xl lg:leading-[3rem] lg:font-semibold leading-[2rem] text-primary-heading"
             >
               How It Works
             </h3>
-            <p class="w-1/2 mt-8">
+            <p class="w-full lg:w-1/2 mt-8">
               Enjoy our friendly, simple process: find your doctor, pick a time,
               and book your appointment in a few easy steps.
             </p>
           </div>
           <div class="mt-16 flex flex-col gap-4 md:flex-row md:gap-0">
-            <div class="flex flex-col border-s px-4 border-[var(--bg-dark)]">
+            <div class="flex flex-col border-s px-4 border-[#10B9814D]">
               <span class="bg-[var(--bg-light)] p-2 rounded-full w-fit">
                 <SearchIcon class="w-8 h-8 text-green-500" />
               </span>
@@ -234,7 +306,7 @@ function updateCarousel() {
                 your health needs.
               </p>
             </div>
-            <div class="flex flex-col border-s px-4 border-[var(--bg-dark)]">
+            <div class="flex flex-col border-s px-4 border-[#10B9814D]">
               <span class="bg-[var(--bg-light)] p-2 rounded-full w-fit">
                 <CalendarIcon class="w-8 h-8 text-green-500" />
               </span>
@@ -246,7 +318,7 @@ function updateCarousel() {
                 in-person or virtual visit.
               </p>
             </div>
-            <div class="flex flex-col border-s px-4 border-[var(--bg-dark)]">
+            <div class="flex flex-col border-s px-4 border-[#10B9814D]">
               <span class="bg-[var(--bg-light)] p-2 rounded-full w-fit">
                 <CheckIcon class="w-8 h-8 text-green-500" />
               </span>
@@ -258,7 +330,7 @@ function updateCarousel() {
                 confirmation instantly.
               </p>
             </div>
-            <div class="flex flex-col border-s px-4 border-[var(--bg-dark)]">
+            <div class="flex flex-col border-s px-4 border-[#10B9814D]">
               <span class="bg-[var(--bg-light)] p-2 rounded-full w-fit">
                 <HospitalIcon class="w-8 h-8 text-green-500" />
               </span>
@@ -276,17 +348,17 @@ function updateCarousel() {
 
       <!-- features section -->
       <section
-        class="mt-32 section-x-padding bg-[var(--bg-light)] py-48 flex justify-center"
+        class="mt-16 lg:mt-32 section-x-padding bg-[var(--bg-light)] py-16 lg:py-48 flex justify-center"
       >
         <div class="container">
           <div class="flex flex-col">
             <h3
-              class="text-4xl font-semibold leading-[3rem] text-primary-heading"
+              class="text-3xl lg:text-4xl lg:leading-[3rem] lg:font-semibold leading-[2rem] text-primary-heading"
             >
               Experience A New <br />
               Kind Of Doctor&apos;s Office
             </h3>
-            <p class="w-1/3 mt-4">
+            <p class="w-full lg:w-1/3 mt-4">
               At Carefusion365, we are committed to providing world-class
               healthcare with a patient-first approach.
             </p>
@@ -297,7 +369,7 @@ function updateCarousel() {
               >
             </div> -->
           </div>
-          <div class="mt-16 flex flex-wrap gap-4 w-full">
+          <div class="mt-16 flex flex-col lg:flex-row flex-wrap gap-4 w-full">
             <div class="flex-1 flex flex-col p-4 bg-white rounded-2xl">
               <span class="bg-[var(--bg-light)] p-2 rounded-full w-fit">
                 <SearchIcon class="w-8 h-8 text-green-500" />
@@ -336,8 +408,8 @@ function updateCarousel() {
                 professionals.
               </p>
             </div>
-            <div class="basis-full"></div>
-            <div class="w-1/3 ms-auto flex flex-col p-4 bg-white rounded-2xl">
+            <div class="hidden lg:block basis-full"></div>
+            <div class="w-full lg:w-1/3 ms-auto flex flex-col p-4 bg-white rounded-2xl">
               <span class="bg-[var(--bg-light)] p-2 rounded-full w-fit">
                 <StarIcon class="w-8 h-8 text-green-500" />
               </span>
@@ -349,7 +421,7 @@ function updateCarousel() {
                 before booking your consultation.
               </p>
             </div>
-            <div class="w-1/3 me-auto flex flex-col p-4 bg-white rounded-2xl">
+            <div class="w-full lg:w-1/3 me-auto flex flex-col p-4 bg-white rounded-2xl">
               <span class="bg-[var(--bg-light)] p-2 rounded-full w-fit">
                 <LockKeyholeIcon class="w-8 h-8 text-green-500" />
               </span>
@@ -370,38 +442,38 @@ function updateCarousel() {
       <section
         id="waitlist-section"
         ref="waitlist-section"
-        class="mt-32 section-x-padding flex justify-center"
+        class="mt-16 lg:mt-32 section-x-padding flex justify-center"
       >
         <div class="container">
           <div
-            class="w-full flex flex-nowrap gap-12 items-center bg-[var(--bg-light)] rounded-2xl"
+            class="w-full flex flex-col lg:flex-row flex-nowrap gap-12 items-center bg-[var(--bg-light)] rounded-2xl"
           >
-            <div class="w-full flex-1">
+            <div class="w-full flex-1 order-2 lg:order-1">
               <img
                 src="~/assets/img/waitlist.png"
-                class="h-[42rem] w-full object-cover object-right rounded-tl-2xl rounded-bl-2xl"
+                class="h-[24rem] lg:h-[42rem] w-full object-cover object-right rounded-2xl"
                 alt="female doctor with stethoscope"
               />
             </div>
-            <div class="bg-[var(--bg-light)] flex-1">
-              <h2 class="text-5xl text-primary-heading">
+            <div class="bg-[var(--bg-light)] flex-1 order-1 lg:order-2 p-4 lg:p-none rounded-2xl">
+              <h2 class="text-3xl lg:text-5xl text-primary-heading">
                 Join the Waitlist <br />
                 Get Early Access 🥳
               </h2>
-              <p class="w-[60%] mt-4">
+              <p class="w-full lg:w-[60%] mt-4">
                 Be the first to experience a seamless way to find specialists
                 and book appointments across trusted hospitals. Sign up now and
                 stay updated on our launch!
               </p>
 
-              <div class="flex gap-4 mt-12 me-16">
+              <div class="flex flex-col lg:flex-row lg:gap-4 mt-12 me-16">
                 <Input
                   aria-label="waitlist-label"
                   class="mt-3 rounded-full shadow-none border-none p-6 bg-white"
                   placeholder="your@email.com"
                 />
                 <Button
-                  class="mt-4 p-6 bg-[var(--bg-dark)] rounded-full text-white font-bold"
+                  class="mt-4 p-6 bg-[var(--bg-dark)] rounded-full text-white font-bold w-fit"
                 >
                   Join the Waitlist
                 </Button>
