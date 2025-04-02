@@ -32,9 +32,9 @@ function scrollToTop() {
 <template>
   <div
     ref="navbar"
-    class="Navbar fixed top-0 left-0 right-0 bg-white mx-4 lg:mx-16 mt-8 p-6 rounded-2xl z-10 flex flex-col justify-center transition-opacity"
+    class="Navbar fixed top-0 left-0 right-0 bg-white mx-4 lg:mx-16 mt-8 p-6 rounded-2xl z-10 flex flex-col lg:flex-row justify-center transition-opacity max-w-[1312px]"
     :class="{
-      'shadow-md': y > 0,
+      'shadow-[0_21px_46px_0_rgba(0,0,0,0.05)]': y > 0,
     }"
   >
     <div
@@ -51,29 +51,24 @@ function scrollToTop() {
       <!-- middle section -->
       <nav>
         <Button
-          class="bg-[#E2E8F026] shadow-none p-3 rounded-full text-primary-heading hover:text-white me-4"
-          disabled
-          >Find a Doctor</Button
-        >
-        <Button
-          class="bg-[#E2E8F026] shadow-none p-3 rounded-full text-primary-heading hover:text-white me-4"
+          class="bg-[#E2E8F026] shadow-none rounded-full text-primary-heading hover:text-white me-4 py-2 px-4"
           disabled
           >Services</Button
         >
         <Button
-          class="bg-[#E2E8F026] shadow-none p-3 rounded-full text-primary-heading hover:text-white me-4"
+          class="bg-[#E2E8F026] shadow-none rounded-full text-primary-heading hover:text-white me-4 py-2 px-4"
           disabled
           >About</Button
         >
         <Button
-          class="bg-[#E2E8F026] shadow-none p-3 rounded-full text-primary-heading hover:text-white me-4"
+          class="bg-[#E2E8F026] shadow-none rounded-full text-primary-heading hover:text-white me-4 py-2 px-4"
           disabled
           >Contact Us</Button
         >
       </nav>
 
       <Button
-        class="bg-white border border-[#E2E8F0] shadow-none rounded-full font-bold text-primary-heading hover:text-white"
+        class="bg-white border border-[#E2E8F0] shadow-none rounded-full text-primary-heading hover:text-white py-2 px-4"
         @click="scrollToWaitlist"
       >
         Join the Waitlist</Button

@@ -9,20 +9,20 @@ const props = defineProps<{
 
 <template>
   <div class="HealthcareServiceCard h-full">
-    <div class="bg-[var(--bg-light)] flex flex-col rounded-2xl">
+    <div class="bg-[var(--bg-light)] flex flex-col rounded-2xl h-full">
       <NuxtImg
         :src="props.image"
-        class="h-[16rem] lg:h-[24rem] object-cover rounded-tr-2xl rounded-tl-2xl object-top"
+        class="h-[16rem] lg:h-[24rem] object-cover rounded-2xl object-top"
         alt="healthcare service"
       />
       <div class="p-8">
-        <h4 class="text-2xl font-semibold mt-4">{{ props.title }}</h4>
-        <p class="mt-2">
+        <h4 class="title text-primary">{{ props.title }}</h4>
+        <p class="p mt-2 leading-[24px]">
           {{ props.description }}
         </p>
         <Button
-          class="bg-transparent shadow-none border border-[var(--bg-dark)] text-primary-heading font-bold mt-8 p-4 rounded-full hover:text-white"
-          >Learn More</Button
+          class="p bg-transparent shadow-none border border-[#CFD7E2] text-primary-heading mt-8 p-4 rounded-full hover:text-white leading-[24px]"
+          >Find a Doctor</Button
         >
       </div>
     </div>

@@ -74,12 +74,81 @@
     @apply px-4 lg:px-16;
   }
   .input-bg {
-    background-color: #edf1f6 !important;
+    background-color: #EFEFEF;
   }
   .text-primary-heading {
     color: #334155;
   }
   .text-primary {
     color: #334155B2;
+  }
+
+  .h1 {
+    font-size: 2.5rem;
+    @apply font-medium;
+    letter-spacing: -.01rem;
+    line-height: 4.2rem;
+
+    @screen lg {
+      font-size: 3.5rem;
+    }
+  }
+
+  .h2 {
+    font-size: 2rem;
+    @apply font-medium;
+    letter-spacing: -.02rem;
+    line-height: 3rem;
+
+    @screen lg {
+      font-size: 2.5rem;
+    }
+  }
+
+  .h3 {
+    font-size: 1.5rem;
+    @apply font-medium;
+    line-height: 3rem;
+    letter-spacing: -.02rem;
+
+    @screen lg {
+      font-size: 2.5rem;
+    }
+  }
+
+  .title {
+    font-size: 1.5rem;
+    @apply font-medium;
+    line-height: 1.5rem;
+    letter-spacing: -0.02rem;
+
+    @screen lg {
+      font-size: 1.5rem;
+      /* font-size: 24px; */
+    }
+  }
+
+  .subtitle {
+    font-size: 1.125rem;
+
+    @screen lg {
+      font-size: 1.25rem;
+    }
+  }
+
+  .label {
+    font-size: .875rem;
+    @apply font-medium;
+
+    @screen lg {
+      font-size: .875rem;
+    }
+  }
+
+  .p {
+    line-height: 1.5rem;
+    color: hsla(215 25% 26.7% / 0.7);
+    /* line-height: 1.3125rem; */
+    @apply font-normal;
   }
 }

@@ -4,7 +4,7 @@
       <div class="flex flex-wrap lg:flex-nowrap gap-4">
         <div class="flex-[2]">
           <h3 class="text-2xl font-bold mb-8">CareFusion</h3>
-          <p class="w-3/4">
+          <p class="p w-3/4 text-white leading-[1.875rem]">
             Carefusion is a next-gen, AI-powered healthcare service assistant that
             links patient EMR to healthcare practitioners with ease.
           </p>
