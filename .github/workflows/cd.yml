@@ -23,6 +23,9 @@ jobs:
       - name: Generate static files
         run: npm run generate
 
+      - name: Change directory to .output/public
+        run: cd .output/public
+
       - name: Deploy to EC2
         uses: appleboy/scp-action@v0.1.7
         with:
@@ -30,7 +33,7 @@ jobs:
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.EC2_SSH_KEY }}
           passphrase: ${{ secrets.EC2_SSH_PASSPHRASE }}
-          source: ".output/public/*"
+          source: "*"
           target: "/home/${{ secrets.EC2_USERNAME }}/website"
           strip_components: 1
           overwrite: true
