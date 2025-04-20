@@ -227,16 +227,16 @@ function updateCarousel() {
                 </div>
                 <div class="carousel-item flex-shrink-0 w-full lg:w-1/3">
                   <HealthcareServiceCard
-                    title="Gynaecology"
-                    description="Comprehensive care for women’s health, from reproductive health to menopause."
-                    image="/img/gynaecology.png"
+                    title="Womens's Health"
+                    description="Comprehensive check-ups and preventive care for your overall well-being."
+                    image="/img/womens-health.png"
                   />
                 </div>
                 <div class="carousel-item flex-shrink-0 w-full lg:w-1/3">
                   <HealthcareServiceCard
                     title="Ear, Nose & Throat"
                     description="Specialized care for ear, nose, and throat conditions, from allergies to hearing loss."
-                    image="/img/ent.png"
+                    image="/img/ent.jpeg"
                   />
                 </div>
               </div>
@@ -353,15 +353,9 @@ function updateCarousel() {
                 Kind Of Doctor&apos;s Office
               </h3>
               <p class="w-full lg:w-1/3 mt-4 p">
-                At Carefusion365, we are committed to providing world-class
+                At CareFusion, we are committed to providing world-class
                 healthcare with a patient-first approach.
               </p>
-              <!-- <div class="flex gap-4 mt-8">
-              <Button class="rounded-full p-6">Book a consultation</Button>
-              <Button class="rounded-full p-6" variant="outline"
-                >Find a doctor</Button
-              >
-            </div> -->
             </div>
             <div
               class="mt-16 flex flex-col lg:flex-row flex-wrap gap-x-6 gap-y-3 w-full"
