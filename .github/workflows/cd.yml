@@ -32,4 +32,9 @@ jobs:
           passphrase: ${{ secrets.EC2_SSH_PASSPHRASE }}
           source: ".output/public/*"
           target: "/home/${{ secrets.EC2_USERNAME }}/website"
+          strip_components: 1
+          overwrite: true
           debug: true
+
+      - name: Restart Nginx
+        run: sudo systemctl restart nginx
