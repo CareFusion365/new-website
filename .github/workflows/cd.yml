@@ -2,7 +2,8 @@ name: Deploy to EC2
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, master, develop ]
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -31,3 +32,4 @@ jobs:
           passphrase: ${{ secrets.EC2_SSH_PASSPHRASE }}
           source: ".output/public/*"
           target: "/home/${{ secrets.EC2_USERNAME }}/website"
+          debug: true
