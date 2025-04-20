@@ -35,7 +35,6 @@ jobs:
           passphrase: ${{ secrets.EC2_SSH_PASSPHRASE }}
           source: "*"
           target: "/home/${{ secrets.EC2_USERNAME }}/website"
-          strip_components: 1
           overwrite: true
           debug: true
 
