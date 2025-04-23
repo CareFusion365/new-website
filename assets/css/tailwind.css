@@ -84,7 +84,7 @@
   }
 
   .h1 {
-    font-size: 2.5rem;
+    font-size: 4rem;
     @apply font-medium;
     letter-spacing: -.01rem;
     line-height: 4.2rem;
@@ -95,7 +95,7 @@
   }
 
   .h2 {
-    font-size: 2rem;
+    font-size: 3rem;
     @apply font-medium;
     letter-spacing: -.02rem;
     line-height: 3rem;
@@ -150,5 +150,53 @@
     color: hsla(215 25% 26.7% / 0.7);
     /* line-height: 1.3125rem; */
     @apply font-normal;
+  }
+
+  @media (max-width: 768px) {
+    .h1 {
+      font-size: 3rem;
+      @apply font-medium;
+      letter-spacing: -.01rem;
+      line-height: 3.6rem;
+    }
+  
+    /* use case is funny */
+    .h2 {
+      font-size: 2rem;
+      @apply font-medium;
+      letter-spacing: -.02rem;
+      line-height: 2.4rem;
+    }
+  
+    .h3 {
+      font-size: 2rem;
+      @apply font-medium;
+      line-height: 2.4rem;
+      letter-spacing: -.02rem;
+    }
+  
+    .title {
+      font-size: 1.5rem;
+      @apply font-medium;
+      line-height: 1.5rem;
+      letter-spacing: -0.02rem;
+    }
+  
+    .subtitle {
+      font-size: 1.125rem;
+    }
+  
+    .label {
+      font-size: .875rem;
+      @apply font-medium;
+    }
+  
+    .p {
+      font-size: 1rem;
+      line-height: 1.6875rem;
+      color: hsla(215 25% 26.7% / 0.8);
+      /* line-height: 1.3125rem; */
+      @apply font-normal;
+    }
   }
 }

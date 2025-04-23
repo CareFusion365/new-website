@@ -26,16 +26,12 @@
             Services
           </h5>
           <ul class="list-none">
-            <li><a href="#" class="hover:underline">Cardiology</a></li>
-            <li><a href="#" class="hover:underline">Dental</a></li>
+            <li><a href="#" class="hover:underline">Urgent Care</a></li>
             <li><a href="#" class="hover:underline">Primary Care</a></li>
-            <li><a href="#" class="hover:underline">Optometry</a></li>
-            <li><a href="#" class="hover:underline">Gynaecology</a></li>
-            <li>
-              <a href="#" class="hover:underline">Ear, Nose &amp; Throat</a>
-            </li>
-            <li><a href="#" class="hover:underline">Dermatology</a></li>
-            <li><a href="#" class="hover:underline">Pediatrics</a></li>
+            <li><a href="#" class="hover:underline">Women's Health</a></li>
+            <li><a href="#" class="hover:underline">Men's Health</a></li>
+            <li><a href="#" class="hover:underline">Mental Health</a></li>
+            <li><a href="#" class="hover:underline">Lab Testing</a></li>
           </ul>
         </div>
         <div class="basis-full lg:hidden"></div>

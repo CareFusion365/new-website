@@ -62,7 +62,7 @@ function updateCarousel() {
           <div class="bg-[var(--bg-light)] flex-1">
             <div class="block lg:hidden section-x-padding mt-40">
               <h1 class="h1 text-primary-heading">Data-powered healthcare</h1>
-              <p class="mt-4 subtitle">
+              <p class="p mt-4 subtitle">
                 Carefusion is a next-gen, AI-powered healthcare service
                 assistant that links patient EMR to healthcare practitioners
                 with ease.
@@ -82,9 +82,10 @@ function updateCarousel() {
                     <Input
                       id="cta-search"
                       aria-label="cta-label"
-                      class="mt-2 rounded-full input-bg shadow-none border-none p-6"
+                      class="mt-2 rounded-full !input-bg shadow-none border-none p-6 placeholder:text-[rgba(51_65_85_0.5)]"
                       placeholder="eg: Diabetes, HIV, lab test"
                       :pre-icon="SearchIcon"
+                      icon-class="text-[rgba(51_65_85_0.5)]"
                     />
                   </div>
                   <div class="flex-1">
@@ -97,9 +98,10 @@ function updateCarousel() {
                     <Input
                       id="cta-search"
                       aria-label="cta-label"
-                      class="mt-2 rounded-full input-bg shadow-none border-none p-6"
+                      class="mt-2 rounded-full !input-bg shadow-none border-none p-6 placeholder:text-[rgba(51_65_85_0.5)]"
                       placeholder="Search location (Accra, Tema, Kumasi, etc)"
                       :pre-icon="SearchIcon"
+                      icon-class="text-[rgba(51_65_85_0.5)]"
                     />
                   </div>
                 </div>
@@ -118,10 +120,10 @@ function updateCarousel() {
               </div>
             </div>
           </div>
-          <div class="h-fit lg:h-full w-[601px] _flex-1 _w-full mt-8 lg:mt-0">
+          <div class="h-fit lg:h-full lg:w-[601px] mt-8 lg:mt-0">
             <img
               src="~/assets/img/hero-bg.png"
-              class="h-1/3 lg:h-full w-full object-cover object-top"
+              class="h-[348px] lg:h-full w-full object-cover object-top lg:object-top"
               alt="female doctor with stethoscope"
             />
           </div>
@@ -193,41 +195,42 @@ function updateCarousel() {
                 Explore Our Featured<br />Medical Specialties
               </h3>
               <p class="w-full lg:w-1/2 mt-4 p">
-                Find the right care for your health needs. Our network of <br />
+                Find the right care for your health needs. Our network of
+                <br class="hidden lg:block" />
                 expert doctors covers a wide range of specialties, ensuring
-                <br />
+                <br class="hidden lg:block" />
                 you get the best treatment for your condition.
               </p>
             </div>
-            <div class="mt-16 relative">
+            <div class="mt-8 lg:mt-16 relative">
               <div
                 class="flex gap-4 transition-transform duration-300 ease-in-out pe-16"
                 ref="carousel-items"
               >
                 <div class="carousel-item flex-shrink-0 w-full lg:w-1/3">
                   <HealthcareServiceCard
-                    title="Cardiology"
+                    title="Urgent Care"
                     description="Expert heart care from top cardiologists to keep your heart healthy and strong."
                     image="/img/cardiology.png"
                   />
                 </div>
                 <div class="carousel-item flex-shrink-0 w-full lg:w-1/3">
                   <HealthcareServiceCard
-                    title="Dental"
+                    title="Primary Care"
                     description="Quality dental care, from routine cleanings to advanced procedures for a healthy smile."
                     image="/img/dental.png"
                   />
                 </div>
                 <div class="carousel-item flex-shrink-0 w-full lg:w-1/3">
                   <HealthcareServiceCard
-                    title="Optometry"
+                    title="Specialist Care"
                     description="Vision exams, eyewear, and eye health treatments to keep your sight sharp."
                     image="/img/optometry.png"
                   />
                 </div>
                 <div class="carousel-item flex-shrink-0 w-full lg:w-1/3">
                   <HealthcareServiceCard
-                    title="Womens's Health"
+                    title="Women's Health"
                     description="Comprehensive check-ups and preventive care for your overall well-being."
                     image="/img/womens-health.png"
                   />
@@ -262,8 +265,8 @@ function updateCarousel() {
                 <ChevronRight />
               </button>
             </div>
-            <div class="text-center mt-8 lg:mt-12">
-              <Button class="rounded-full py-3 px-4" size="lg"
+            <div class="text-center mt-8 mb-32 lg:mt-12">
+              <Button class="rounded-full !py-6 lg:py-3 !px-4" size="lg"
                 >Explore more services</Button
               >
             </div>
@@ -274,14 +277,14 @@ function updateCarousel() {
         <section class="mt-16 lg:mt-32 section-x-padding flex justify-center">
           <div class="container overflow-hidden">
             <div class="flex flex-col items-center text-center">
-              <h3 class="h3 text-primary-heading">How It Works</h3>
+              <h3 class="h3 text-primary-heading ">How It Works</h3>
               <p class="w-full lg:w-1/2 mt-4 p">
                 Enjoy our friendly, simple process: find your doctor, pick a
-                <br />
+                <br class="hidden lg:block" />
                 time, and book your appointment in a few easy steps.
               </p>
             </div>
-            <div class="mt-16 flex flex-col gap-4 md:flex-row md:gap-0">
+            <div class="mt-8 lg:mt-16 flex flex-col gap-12 lg:gap-4 md:flex-row md:gap-0">
               <div class="flex flex-col border-s px-4 border-[#10B9814D]">
                 <span class="bg-green-500/10 p-2 rounded-full w-fit">
                   <PhMagnifyingGlass
@@ -358,9 +361,11 @@ function updateCarousel() {
               </p>
             </div>
             <div
-              class="mt-16 flex flex-col lg:flex-row flex-wrap gap-x-6 gap-y-3 w-full"
+              class="mt-8 lg:mt-16 flex flex-col lg:flex-row flex-wrap gap-x-6 gap-y-3 w-full"
             >
-              <div class="flex flex-col p-4 bg-white rounded-2xl w-[26.33rem]">
+              <div
+                class="flex flex-col p-4 bg-white rounded-2xl w-full lg:w-[26.33rem]"
+              >
                 <span class="bg-green-500/10 p-2 rounded-full w-fit">
                   <PhMagnifyingGlass
                     :size="32"
@@ -368,7 +373,7 @@ function updateCarousel() {
                     class="text-green-500"
                   />
                 </span>
-                <h4 class="title mt-24">
+                <h4 class="title mt-20 lg:mt-24">
                   Find the Right Specialist, Instantly
                 </h4>
                 <p class="p mt-4">
@@ -376,7 +381,9 @@ function updateCarousel() {
                   by specialty, location, or condition—all in one place.
                 </p>
               </div>
-              <div class="flex flex-col p-4 bg-white rounded-2xl w-[26.33rem]">
+              <div
+                class="flex flex-col p-4 bg-white rounded-2xl w-full lg:w-[26.33rem]"
+              >
                 <span class="bg-green-500/10 p-2 rounded-full w-fit">
                   <PhCalendar
                     :size="32"
@@ -384,14 +391,18 @@ function updateCarousel() {
                     class="text-green-500"
                   />
                 </span>
-                <h4 class="title mt-24">Book Appointments with Ease</h4>
+                <h4 class="title mt-20 lg:mt-24">
+                  Book Appointments with Ease
+                </h4>
                 <p class="p mt-4">
                   Schedule virtual or in-person consultations with just a few
                   clicks. No long calls or wait times—simply choose a doctor and
                   book a time that works for you.
                 </p>
               </div>
-              <div class="flex flex-col p-4 bg-white rounded-2xl w-[26.33rem]">
+              <div
+                class="flex flex-col p-4 bg-white rounded-2xl w-full lg:w-[26.33rem]"
+              >
                 <span class="bg-green-500/10 p-2 rounded-full w-fit">
                   <PhAsclepius
                     :size="32"
@@ -399,7 +410,7 @@ function updateCarousel() {
                     class="text-green-500"
                   />
                 </span>
-                <h4 class="title mt-24">
+                <h4 class="title mt-20 lg:mt-24">
                   Access Trusted Hospitals &amp; Clinics
                 </h4>
                 <p class="p mt-4">
@@ -408,22 +419,30 @@ function updateCarousel() {
                   professionals.
                 </p>
               </div>
-              <div class="flex-basis-full w-full"></div>
-              <div class="flex flex-col p-4 bg-white rounded-2xl w-[26.33rem]">
+              <div class="hidden lg:flex flex-basis-full w-full"></div>
+              <div
+                class="flex flex-col p-4 bg-white rounded-2xl w-full lg:w-[26.33rem]"
+              >
                 <span class="bg-green-500/10 p-2 rounded-full w-fit">
                   <PhCpu :size="32" weight="duotone" class="text-green-500" />
                 </span>
-                <h4 class="title mt-24">Verified Reviews &amp; Ratings</h4>
+                <h4 class="title mt-20 lg:mt-24">
+                  Verified Reviews &amp; Ratings
+                </h4>
                 <p class="p mt-4">
                   Read real patient reviews and ratings to make informed
                   decisions before booking your consultation.
                 </p>
               </div>
-              <div class="flex flex-col p-4 bg-white rounded-2xl w-[26.33rem]">
+              <div
+                class="flex flex-col p-4 bg-white rounded-2xl w-full lg:w-[26.33rem]"
+              >
                 <span class="bg-green-500/10 p-2 rounded-full w-fit">
                   <PhVault :size="32" weight="duotone" class="text-green-500" />
                 </span>
-                <h4 class="title mt-24">Secure & Hassle-Free Experience</h4>
+                <h4 class="title mt-20 lg:mt-24">
+                  Secure & Hassle-Free Experience
+                </h4>
                 <p class="p mt-4">
                   Your health information is safe and confidential, and our
                   platform ensures a smooth, user-friendly experience from
@@ -464,10 +483,10 @@ function updateCarousel() {
                   and stay updated on our launch!
                 </p>
 
-                <div class="flex flex-col lg:flex-row lg:gap-4 mt-2.5 me-16">
+                <div class="flex flex-col lg:flex-row lg:gap-4 mt-2.5 lg:me-16">
                   <Input
                     aria-label="waitlist-label"
-                    class="mt-3 rounded-full shadow-none border-none p-6 bg-white"
+                    class="mt-3 rounded-full shadow-none border-none p-6 bg-white h-14 placeholder:text-[rgba(51_65_85_0.5)]"
                     placeholder="your@email.com"
                   />
                   <Button

@@ -10,6 +10,7 @@ const props = defineProps<{
   placeholder?: string;
   preIcon?: Function;
   postIcon?: Function;
+  iconClass?: string;
 }>();
 
 const emits = defineEmits<{
@@ -28,6 +29,7 @@ const modelValue = useVModel(props, "modelValue", emits, {
       v-if="preIcon"
       :is="preIcon"
       class="absolute left-3 flex items-center pointer-events-none text-muted-foreground size-5 top-5"
+      :class="iconClass"
     >
     </component>
     <input
@@ -46,6 +48,7 @@ const modelValue = useVModel(props, "modelValue", emits, {
       :is="postIcon"
       v-if="props.postIcon"
       class="absolute right-3 flex items-center pointer-events-none text-muted-foreground size-5 top-5"
+      :class="iconClass"
     >
       <i :class="props.postIcon"></i>
     </component>

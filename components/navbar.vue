@@ -35,7 +35,8 @@ function scrollToTop() {
       ref="navbar"
       class="Navbar bg-white mt-8 p-6 rounded-2xl flex flex-col lg:flex-row justify-center transition-opacity max-w-[1312px] w-[calc(100%-2rem)] lg:w-full"
       :class="{
-        'shadow-[0_21px_46px_0_rgba(0,0,0,0.05)]': y > 0,
+        'lg:shadow-[0_21px_46px_0_rgba(0,0,0,0.05)]': y > 0,
+        'shadow-[0_36px_79px_0_rgba(0,0,0,0.1),0_144px_144px_0_rgba(0,0,0,0.1)]': y > 0,
       }"
     >
       <div
@@ -86,8 +87,8 @@ function scrollToTop() {
           CareFusion
         </h4>
 
-        <Button variant="ghost" @click="isMobileMenuOpen = !isMobileMenuOpen">
-          <MenuIcon />
+        <Button variant="ghost" size="icon" @click="isMobileMenuOpen = !isMobileMenuOpen" class="hover:bg-transparent active:bg-transparent">
+          <MenuIcon class="!size-6" />
         </Button>
       </div>
       <div
