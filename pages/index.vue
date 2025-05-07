@@ -26,25 +26,37 @@ onMounted(() => {
   totalSlides.value = window.document.querySelectorAll(".carousel-item").length;
 
   carouselPrevButtonRef.value!.addEventListener("click", () => {
-    currentIndex.value -= 1;
+    currentIndex.value = Math.max(0, currentIndex.value - 1);
     updateCarousel();
   });
 
   carouselNextButtonRef.value!.addEventListener("click", () => {
-    currentIndex.value += 1;
+    currentIndex.value = Math.min(
+      totalSlides.value - 1,
+      currentIndex.value + 1
+    );
     updateCarousel();
   });
 
   carouselNextButtonLgRef.value!.addEventListener("click", () => {
-    currentIndex.value += 3;
+    currentIndex.value = Math.min(
+      totalSlides.value - 1,
+      currentIndex.value + 3
+    );
     updateCarousel();
   });
 });
 
 function updateCarousel() {
-  carouselRef.value!.style.transform = `translateX(-${
-    currentIndex.value * slideWidth.value
-  }px)`;
+  currentIndex.value = Math.max(
+    0,
+    Math.min(currentIndex.value, totalSlides.value - 1)
+  );
+  const scrollAmount = currentIndex.value * slideWidth.value;
+  carouselRef.value!.scrollTo({
+    left: scrollAmount,
+    behavior: "smooth",
+  });
 }
 </script>
 
@@ -204,7 +216,7 @@ function updateCarousel() {
             </div>
             <div class="mt-8 lg:mt-16 relative">
               <div
-                class="flex gap-4 transition-transform duration-300 ease-in-out pe-16"
+                class="flex gap-4 transition-transform duration-300 ease-in-out pe-16 overflow-x-auto hide-scrollbar"
                 ref="carousel-items"
               >
                 <div class="carousel-item flex-shrink-0 w-full lg:w-1/3">
@@ -277,14 +289,16 @@ function updateCarousel() {
         <section class="mt-16 lg:mt-32 section-x-padding flex justify-center">
           <div class="container overflow-hidden">
             <div class="flex flex-col items-center text-center">
-              <h3 class="h3 text-primary-heading ">How It Works</h3>
+              <h3 class="h3 text-primary-heading">How It Works</h3>
               <p class="w-full lg:w-1/2 mt-4 p">
                 Enjoy our friendly, simple process: find your doctor, pick a
                 <br class="hidden lg:block" />
                 time, and book your appointment in a few easy steps.
               </p>
             </div>
-            <div class="mt-8 lg:mt-16 flex flex-col gap-12 lg:gap-4 md:flex-row md:gap-0">
+            <div
+              class="mt-8 lg:mt-16 flex flex-col gap-12 lg:gap-4 md:flex-row md:gap-0"
+            >
               <div class="flex flex-col border-s px-4 border-[#10B9814D]">
                 <span class="bg-green-500/10 p-2 rounded-full w-fit">
                   <PhMagnifyingGlass
