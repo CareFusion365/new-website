@@ -93,7 +93,7 @@ function updateCarousel() {
                       id="cta-label"
                       for="cta-search"
                       class="text-primary-heading"
-                      >What brings you here?</Label
+                      >Location</Label
                     >
                     <Input
                       id="cta-search"
