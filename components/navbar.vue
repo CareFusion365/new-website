@@ -45,7 +45,7 @@ function scrollToTop() {
         <!-- logo -->
         <h4
           class="text-primary-heading text-2xl font-bold select-none cursor-default"
-          @click="scrollToTop"
+          @click="$router.push({ name: 'index' })"
         >
           CareFusion
         </h4>
@@ -59,7 +59,7 @@ function scrollToTop() {
           >
           <Button
             class="bg-[#E2E8F026] shadow-none rounded-full text-primary-heading hover:text-white me-4 py-2 px-4"
-            disabled
+            @click="$router.push({ name: 'about' })"
             >About</Button
           >
           <Button
@@ -82,7 +82,7 @@ function scrollToTop() {
       >
         <h4
           class="text-primary-heading text-2xl font-bold select-none cursor-default"
-          @click="scrollToTop"
+          @click="$router.push({ name: 'index' })"
         >
           CareFusion
         </h4>
@@ -108,7 +108,7 @@ function scrollToTop() {
           </Button>
           <Button
             class="bg-[#E2E8F026] shadow-none p-3 rounded-full text-primary-heading hover:text-white me-4"
-            disabled
+            @click="$router.push({ name: 'about' })"
           >
             About
           </Button>
