@@ -7,7 +7,7 @@ import {
   PhMagnifyingGlass,
   PhVault,
 } from "@phosphor-icons/vue";
-import aboutHospitalBg from "@/assets/img/bg-3.png";
+import aboutHospitalBg from "@/assets/img/bg-3o.png";
 </script>
 
 <template>
@@ -28,7 +28,7 @@ import aboutHospitalBg from "@/assets/img/bg-3.png";
           </div>
           <div class="h-fit lg:h-full lg:w-[601px] mt-8 lg:mt-0">
             <img
-              src="~/assets/img/hero-bg.png"
+              src="~/assets/img/about-us.png"
               class="h-[348px] lg:h-full w-full object-cover object-top lg:object-top"
               alt="female doctor with stethoscope"
             />
@@ -43,7 +43,6 @@ import aboutHospitalBg from "@/assets/img/bg-3.png";
             backgroundImage: `url(${aboutHospitalBg})`,
             backgroundSize: '70%',
             backgroundRepeat: 'no-repeat',
-            backgroundBlendMode: 'color-dodge',
           }"
         >
           <div class="container overflow-hidden">
@@ -110,7 +109,7 @@ import aboutHospitalBg from "@/assets/img/bg-3.png";
                 </div>
               </div>
 
-              <div class="hidden lg:flex-1 w-[601px]"></div>
+              <div class="hidden lg:block lg:flex-1 w-[601px]"></div>
             </div>
           </div>
         </section>
@@ -288,11 +287,12 @@ import aboutHospitalBg from "@/assets/img/bg-3.png";
 
 .services-section {
   background-position: 70vw 80%;
+  /* background: none !important; */
 }
 
 @media screen and (max-width: 1023px) {
   .services-section {
-    background-position: 70vw 100%;
+    background-position: 70vw 95%;
   }
 }
 </style>
