@@ -3,65 +3,11 @@ import {
   PhAsclepius,
   PhCalendar,
   PhCheck,
-  PhCheckFat,
   PhCpu,
-  PhHospital,
   PhMagnifyingGlass,
   PhVault,
 } from "@phosphor-icons/vue";
-import { ChevronLeft, ChevronRight, SearchIcon } from "lucide-vue-next";
-import aboutHospitalBg from "@/assets/img/about-hospital-bg.png";
-import aboutHospitalBg2 from "@/assets/img/bg-2.png";
-import aboutHospitalBg3 from "@/assets/img/bg-3.png";
-
-// const carouselRef = useTemplateRef("carousel-items");
-// const carouselPrevButtonRef = useTemplateRef("carousel-prev-button");
-// const carouselNextButtonRef = useTemplateRef("carousel-next-button");
-// const carouselNextButtonLgRef = useTemplateRef("carousel-next-button-lg");
-const currentIndex = ref(0);
-const slideWidth = ref(0);
-const totalSlides = ref(0);
-// const waitlistSectionRef = useTemplateRef("waitlist-section");
-
-// onMounted(() => {
-//   slideWidth.value = (
-//     window.document.querySelector(".carousel-item") as any
-//   )?.offsetWidth;
-//   totalSlides.value = window.document.querySelectorAll(".carousel-item").length;
-
-//   carouselPrevButtonRef.value!.addEventListener("click", () => {
-//     currentIndex.value = Math.max(0, currentIndex.value - 1);
-//     updateCarousel();
-//   });
-
-//   carouselNextButtonRef.value!.addEventListener("click", () => {
-//     currentIndex.value = Math.min(
-//       totalSlides.value - 1,
-//       currentIndex.value + 1,
-//     );
-//     updateCarousel();
-//   });
-
-//   carouselNextButtonLgRef.value!.addEventListener("click", () => {
-//     currentIndex.value = Math.min(
-//       totalSlides.value - 1,
-//       currentIndex.value + 3,
-//     );
-//     updateCarousel();
-//   });
-// });
-
-// function updateCarousel() {
-//   currentIndex.value = Math.max(
-//     0,
-//     Math.min(currentIndex.value, totalSlides.value - 1),
-//   );
-//   const scrollAmount = currentIndex.value * slideWidth.value;
-//   carouselRef.value!.scrollTo({
-//     left: scrollAmount,
-//     behavior: "smooth",
-//   });
-// }
+import aboutHospitalBg from "@/assets/img/bg-3.png";
 </script>
 
 <template>
@@ -73,9 +19,13 @@ const totalSlides = ref(0);
         <!-- hero section -->
         <section
           id="hero-section"
-          class="relative w-full lg:h-[740px] flex flex-col lg:flex-row flex-nowrap section-x-padding !pe-0 ps-0 lg:ps-16 bg-[#E8FDF6] overflow-hidden"
+          class="w-full lg:h-[740px] flex flex-col lg:flex-row flex-nowrap section-x-padding !pe-0 ps-0 lg:ps-16 bg-[#E8FDF6] overflow-hidden"
         >
-          <div class="bg-[#E8FDF6] flex-1"></div>
+          <div
+            class="h-[30rem] lg:h-auto bg-[#E8FDF6] lg:flex-1 flex items-end pb-10 ps-4 h:ps-0 lg:pb-20"
+          >
+            <h1 class="h1 text-primary-heading">About Us</h1>
+          </div>
           <div class="h-fit lg:h-full lg:w-[601px] mt-8 lg:mt-0">
             <img
               src="~/assets/img/hero-bg.png"
@@ -83,12 +33,6 @@ const totalSlides = ref(0);
               alt="female doctor with stethoscope"
             />
           </div>
-
-          <div
-            class="hidden lg:flex flex-col justify-end w-2/3 container absolute top-1/2 transform"
-          >
-            <h1 class="h1 text-primary-heading">About Us</h1>
-        </div>
         </section>
 
         <!-- services section -->
@@ -96,9 +40,8 @@ const totalSlides = ref(0);
           id="services-section"
           class="mt-16 lg:mt-32 section-x-padding flex justify-center services-section"
           :style="{
-            backgroundImage: `url(${aboutHospitalBg3})`,
+            backgroundImage: `url(${aboutHospitalBg})`,
             backgroundSize: '70%',
-            backgroundPosition: '70vw 80%',
             backgroundRepeat: 'no-repeat',
             backgroundBlendMode: 'color-dodge',
           }"
@@ -108,11 +51,11 @@ const totalSlides = ref(0);
               <div class="flex-1">
                 <div class="">
                   <p class="text-[20px]">
-                    At Carefusion, we believe that accessing healthcare
-                    should be simple, seamless, and stress-free. Our platform
-                    connects you with trusted hospitals, clinics, and
-                    specialists, allowing you to find the right doctor, compare
-                    verified reviews, and book appointments—both virtual and
+                    At Carefusion, we believe that accessing healthcare should
+                    be simple, seamless, and stress-free. Our platform connects
+                    you with trusted hospitals, clinics, and specialists,
+                    allowing you to find the right doctor, compare verified
+                    reviews, and book appointments—both virtual and
                     in-person—with ease.
                     <br />
                     <br />
@@ -167,7 +110,7 @@ const totalSlides = ref(0);
                 </div>
               </div>
 
-              <div class="flex-1 w-[601px]"></div>
+              <div class="hidden lg:flex-1 w-[601px]"></div>
             </div>
           </div>
         </section>
@@ -178,7 +121,9 @@ const totalSlides = ref(0);
         >
           <div class="container">
             <div class="flex flex-col">
-              <h3 class="h3 text-primary-heading text-[32px]">Our Core Values</h3>
+              <h3 class="h3 text-primary-heading text-[32px]">
+                Our Core Values
+              </h3>
             </div>
             <div
               class="mt-8 lg:mt-4 flex flex-col lg:flex-row flex-wrap gap-x-6 gap-y-6 w-full"
@@ -264,7 +209,7 @@ const totalSlides = ref(0);
 
         <!-- team section -->
         <section
-          class="mt-16 lg:mt-16 section-x-padding py-16 lg:py-8 flex justify-center"
+          class="mt-16 lg:mt-16 section-x-padding py-16 pb-0 lg:py-8 flex justify-center"
         >
           <div class="container">
             <div class="flex flex-col">
@@ -277,7 +222,11 @@ const totalSlides = ref(0);
               <div
                 class="flex flex-col bg-[var(--bg-light)] rounded-2xl w-[calc(25% - 4rem)] lg:w-[26.33rem]"
               >
-                <img src="~/assets/img/eli.png" alt="Elijah" class="h-[30rem] rounded-tl-2xl rounded-tr-2xl object-cover object-top" />
+                <img
+                  src="~/assets/img/eli.png"
+                  alt="Elijah"
+                  class="h-[20rem] lg:h-[30rem] rounded-tl-2xl rounded-tr-2xl object-cover object-top"
+                />
                 <div class="p-4 space-y-2">
                   <h4 class="subtitle text-[24px]">Elijah Ahianyo</h4>
                   <p class="text-[16px] text-[#334155CC]">Co-Founder</p>
@@ -286,7 +235,11 @@ const totalSlides = ref(0);
               <div
                 class="flex flex-col bg-[var(--bg-light)] rounded-2xl w-[calc(25% - 4rem)] lg:w-[26.33rem]"
               >
-                <img src="~/assets/img/eli.png" alt="Elijah" class="h-[30rem] rounded-tl-2xl rounded-tr-2xl object-cover object-top" />
+                <img
+                  src="~/assets/img/eli.png"
+                  alt="Elijah"
+                  class="h-[20rem] lg:h-[30rem] rounded-tl-2xl rounded-tr-2xl object-cover object-top"
+                />
                 <div class="p-4 space-y-2">
                   <h4 class="subtitle text-[24px]">Elijah Ahianyo</h4>
                   <p class="text-[16px] text-[#334155CC]">Co-Founder</p>
@@ -295,7 +248,11 @@ const totalSlides = ref(0);
               <div
                 class="flex flex-col bg-[var(--bg-light)] rounded-2xl w-[calc(25% - 4rem)] lg:w-[26.33rem]"
               >
-                <img src="~/assets/img/eli.png" alt="Elijah" class="h-[30rem] rounded-tl-2xl rounded-tr-2xl object-cover object-top" />
+                <img
+                  src="~/assets/img/eli.png"
+                  alt="Elijah"
+                  class="h-[20rem] lg:h-[30rem] rounded-tl-2xl rounded-tr-2xl object-cover object-top"
+                />
                 <div class="p-4 space-y-2">
                   <h4 class="subtitle text-[24px]">Elijah Ahianyo</h4>
                   <p class="text-[16px] text-[#334155CC]">Co-Founder</p>
@@ -304,7 +261,11 @@ const totalSlides = ref(0);
               <div
                 class="flex flex-col bg-[var(--bg-light)] rounded-2xl w-[calc(25% - 4rem)] lg:w-[26.33rem]"
               >
-                <img src="~/assets/img/eli.png" alt="Elijah" class="h-[30rem] rounded-tl-2xl rounded-tr-2xl object-cover object-top" />
+                <img
+                  src="~/assets/img/eli.png"
+                  alt="Elijah"
+                  class="h-[20rem] lg:h-[30rem] rounded-tl-2xl rounded-tr-2xl object-cover object-top"
+                />
                 <div class="p-4 space-y-2">
                   <h4 class="subtitle text-[24px]">Elijah Ahianyo</h4>
                   <p class="text-[16px] text-[#334155CC]">Co-Founder</p>
@@ -326,8 +287,12 @@ const totalSlides = ref(0);
 }
 
 .services-section {
-  background: url(aboutHospitalBg) no-repeat center center;
-  background-size: cover;
-  background-position: center;
+  background-position: 70vw 80%;
+}
+
+@media screen and (max-width: 1023px) {
+  .services-section {
+    background-position: 70vw 100%;
+  }
 }
 </style>
