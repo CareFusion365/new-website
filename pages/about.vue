@@ -28,7 +28,7 @@ import aboutHospitalBg from "@/assets/img/bg-3o.png";
           </div>
           <div class="h-fit lg:h-full lg:w-[601px] mt-8 lg:mt-0">
             <img
-              src="~/assets/img/about-us.png"
+              src="~/assets/img/about-us.jpg"
               class="h-[348px] lg:h-full w-full object-cover object-top lg:object-top"
               alt="female doctor with stethoscope"
             />
@@ -222,7 +222,7 @@ import aboutHospitalBg from "@/assets/img/bg-3o.png";
                 class="flex flex-col bg-[var(--bg-light)] rounded-2xl w-[calc(25% - 4rem)] lg:w-[26.33rem]"
               >
                 <img
-                  src="~/assets/img/eli.png"
+                  src="~/assets/img/elijah-ahianyo.jpeg"
                   alt="Elijah"
                   class="h-[20rem] lg:h-[30rem] rounded-tl-2xl rounded-tr-2xl object-cover object-top"
                 />
@@ -235,16 +235,16 @@ import aboutHospitalBg from "@/assets/img/bg-3o.png";
                 class="flex flex-col bg-[var(--bg-light)] rounded-2xl w-[calc(25% - 4rem)] lg:w-[26.33rem]"
               >
                 <img
-                  src="~/assets/img/eli.png"
-                  alt="Elijah"
+                  src="~/assets/img/kwesi-fs.jpeg"
+                  alt="Smart"
                   class="h-[20rem] lg:h-[30rem] rounded-tl-2xl rounded-tr-2xl object-cover object-top"
                 />
                 <div class="p-4 space-y-2">
-                  <h4 class="subtitle text-[24px]">Elijah Ahianyo</h4>
+                  <h4 class="subtitle text-[24px]">Kwesi Frempong-Smart</h4>
                   <p class="text-[16px] text-[#334155CC]">Co-Founder</p>
                 </div>
               </div>
-              <div
+              <!-- <div
                 class="flex flex-col bg-[var(--bg-light)] rounded-2xl w-[calc(25% - 4rem)] lg:w-[26.33rem]"
               >
                 <img
@@ -256,8 +256,8 @@ import aboutHospitalBg from "@/assets/img/bg-3o.png";
                   <h4 class="subtitle text-[24px]">Elijah Ahianyo</h4>
                   <p class="text-[16px] text-[#334155CC]">Co-Founder</p>
                 </div>
-              </div>
-              <div
+              </div> -->
+              <!-- <div
                 class="flex flex-col bg-[var(--bg-light)] rounded-2xl w-[calc(25% - 4rem)] lg:w-[26.33rem]"
               >
                 <img
@@ -269,7 +269,7 @@ import aboutHospitalBg from "@/assets/img/bg-3o.png";
                   <h4 class="subtitle text-[24px]">Elijah Ahianyo</h4>
                   <p class="text-[16px] text-[#334155CC]">Co-Founder</p>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
         </section>

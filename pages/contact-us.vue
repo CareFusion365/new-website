@@ -37,7 +37,7 @@ function onSubmit(formData: any) {
           </div>
           <div class="h-fit lg:h-full lg:w-[601px] mt-8 lg:mt-0">
             <img
-              src="~/assets/img/contact-us.png"
+              src="~/assets/img/contact-us.jpg"
               class="h-[348px] lg:h-full w-full object-cover object-top lg:object-top"
               alt="female doctor with stethoscope"
             />
