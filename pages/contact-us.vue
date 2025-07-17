@@ -50,20 +50,20 @@ function onSubmit(formData: any) {
           class="mt-16 lg:mt-32 section-x-padding flex justify-center"
         >
           <div class="container overflow-hidden">
-            <div class="flex flex-col items-center">
+            <div class="flex flex-col items-start lg:items-center">
               <h3 class="h3 text-primary-heading text-[32px]">
                 We&apos;re Here to Help
               </h3>
-              <p class="p mt-4 text-center">
+              <p class="p mt-4 lg:text-center">
                 Need assistance? Our team is here to help. Whether you have
                 questions
-                <br />
+                <br class="hidden lg:block" />
                 about appointments, doctors, or urgent care, feel free to reach
                 out.
               </p>
             </div>
 
-            <div class="flex mt-16">
+            <div class="flex flex-col lg:flex-row mt-16">
               <div class="flex-1">
                 <h5 class="h5 uppercase">Contact Details</h5>
                 <div class="flex items-center gap-2 mt-4">
@@ -88,7 +88,7 @@ function onSubmit(formData: any) {
               </div>
 
               <div class="flex-1">
-                <h5 class="h5 uppercase">Socials</h5>
+                <h5 class="h5 uppercase mt-8 lg:mt-0">Socials</h5>
                 <div class="space-y-4 mt-4">
                   <a
                     href="http://"
@@ -97,9 +97,9 @@ function onSubmit(formData: any) {
                     class="me-2"
                   >
                     <span
-                      class="bg-[#3B82F61A] p-4 rounded-full inline-flex items-center justify-center"
+                      class="bg-[#3B82F61A] p-2 lg:p-4 rounded-full inline-flex items-center justify-center"
                     >
-                      <PhXLogo class="size-6 text-[#3B82F6]" />
+                      <PhXLogo class="size-4 lg:size-6 text-[#3B82F6]" />
                     </span>
                   </a>
                   <a
@@ -109,9 +109,9 @@ function onSubmit(formData: any) {
                     class="me-2"
                   >
                     <span
-                      class="bg-[#3B82F61A] p-4 rounded-full inline-flex items-center justify-center"
+                      class="bg-[#3B82F61A] p-2 lg:p-4 rounded-full inline-flex items-center justify-center"
                     >
-                      <PhInstagramLogo class="size-6 text-[#3B82F6]" />
+                      <PhInstagramLogo class="size-4 lg:size-6 text-[#3B82F6]" />
                     </span>
                   </a>
                   <a
@@ -121,9 +121,9 @@ function onSubmit(formData: any) {
                     class="me-2"
                   >
                     <span
-                      class="bg-[#3B82F61A] p-4 rounded-full inline-flex items-center justify-center"
+                      class="bg-[#3B82F61A] p-2 lg:p-4 rounded-full inline-flex items-center justify-center"
                     >
-                      <PhInstagramLogo class="size-6 text-[#3B82F6]" />
+                      <PhInstagramLogo class="size-4 lg:size-6 text-[#3B82F6]" />
                     </span>
                   </a>
                   <a
@@ -133,22 +133,22 @@ function onSubmit(formData: any) {
                     class="me-2"
                   >
                     <span
-                      class="bg-[#3B82F61A] p-4 rounded-full inline-flex items-center justify-center"
+                      class="bg-[#3B82F61A] p-2 lg:p-4 rounded-full inline-flex items-center justify-center"
                     >
-                      <PhInstagramLogo class="size-6 text-[#3B82F6]" />
+                      <PhInstagramLogo class="size-4 lg:size-6 text-[#3B82F6]" />
                     </span>
                   </a>
                 </div>
               </div>
 
-              <div class="flex-[2]">
+              <div class="flex-[2] mt-16 lg:mt-0">
                 <h5 class="font-medium text-2xl">Send Us a Message</h5>
                 <Card
                   class="mt-4 border-none rounded-2xl shadow-[0_4px_20px_0px_rgba(0,0,0,0,0.05)] bg-white"
                 >
                   <CardContent class="p-4 w-full">
                     <form @submit="onSubmit">
-                      <div class="flex gap-8">
+                      <div class="flex flex-col lg:flex-row gap-4 lg:gap-8">
                         <div class="w-full">
                           <FormField v-slot="{ componentField }" name="name">
                             <FormItem>
@@ -186,7 +186,7 @@ function onSubmit(formData: any) {
                         </div>
                       </div>
 
-                      <div class="flex gap-8 mt-8">
+                      <div class="flex flex-col lg:flex-row gap-4 lg:gap-8 mt-4 lg:mt-8">
                         <div class="w-full">
                           <FormField v-slot="{ componentField }" name="name">
                             <FormItem>
@@ -243,7 +243,7 @@ function onSubmit(formData: any) {
                         </div>
                       </div>
 
-                      <div class="flex gap-8 mt-8">
+                      <div class="flex mt-4 lg:mt-8">
                         <div class="w-full">
                           <FormField v-slot="{ componentField }" name="message">
                             <FormItem>

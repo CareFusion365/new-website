@@ -44,7 +44,7 @@ function scrollToTop() {
       >
         <!-- logo -->
         <h4
-          class="text-primary-heading text-2xl font-bold select-none cursor-default"
+          class="text-primary-heading text-2xl font-bold select-none cursor-pointer"
           @click="$router.push({ name: 'index' })"
         >
           CareFusion
@@ -64,7 +64,7 @@ function scrollToTop() {
           >
           <Button
             class="bg-[#E2E8F026] shadow-none rounded-full text-primary-heading hover:text-white me-4 py-2 px-4"
-            disabled
+            @click="$router.push({ name: 'contact-us' })"
             >Contact Us</Button
           >
         </nav>
@@ -81,7 +81,7 @@ function scrollToTop() {
         class="container lg:hidden flex flex-nowrap justify-between items-center"
       >
         <h4
-          class="text-primary-heading text-2xl font-bold select-none cursor-default"
+          class="text-primary-heading text-2xl font-bold select-none cursor-pointer"
           @click="$router.push({ name: 'index' })"
         >
           CareFusion
@@ -114,7 +114,7 @@ function scrollToTop() {
           </Button>
           <Button
             class="bg-[#E2E8F026] shadow-none p-3 rounded-full text-primary-heading hover:text-white me-4"
-            disabled
+            @click="$router.push({ name: 'contact-us' })"
           >
             Contact Us
           </Button>
