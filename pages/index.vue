@@ -518,6 +518,7 @@ async function onJoinWaitlist() {
 
                 <div class="flex flex-col lg:flex-row lg:gap-4 mt-2.5 lg:me-16">
                   <Input
+                    type="email"
                     aria-label="waitlist-label"
                     placeholder="your@email.com"
                     class="mt-3 rounded-full shadow-none border-none p-6 bg-white h-14 placeholder:text-[rgba(51_65_85_0.5)]"
@@ -528,13 +529,25 @@ async function onJoinWaitlist() {
                     }"
                     :disabled="waitlistJoinStatus === 'loading'"
                     v-model:model-value="email"
+                    @keyup.enter="onJoinWaitlist"
                   />
                   <Button
                     class="mt-4 p-6 bg-[var(--bg-dark)] rounded-full text-white w-fit"
+                    :class="{
+                      'bg-green-500': waitlistJoinStatus === 'success',
+                    }"
                     :disabled="waitlistJoinStatus === 'loading'"
                     @click="onJoinWaitlist"
                   >
+                  <template v-if="waitlistJoinStatus === 'loading'">
+                    Joining...
+                  </template>
+                  <template v-else-if="waitlistJoinStatus === 'success'">
+                    <PhCheckFat /> Joined!
+                  </template>
+                  <template v-else="waitlistJoinStatus === 'idle'">
                     Join the Waitlist
+                  </template>
                   </Button>
                 </div>
               </div>
