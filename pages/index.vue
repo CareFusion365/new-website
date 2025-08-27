@@ -9,6 +9,7 @@ import {
   PhVault,
 } from "@phosphor-icons/vue";
 import { ChevronLeft, ChevronRight, SearchIcon } from "lucide-vue-next";
+import { WaitlistService } from "~/services/api.service";
 
 const carouselRef = useTemplateRef("carousel-items");
 const carouselPrevButtonRef = useTemplateRef("carousel-prev-button");
@@ -57,6 +58,24 @@ function updateCarousel() {
     left: scrollAmount,
     behavior: "smooth",
   });
+}
+
+const email = ref("");
+const waitlistJoinStatus = ref<"idle" | "loading" | "success" | "error">(
+  "idle"
+);
+
+async function onJoinWaitlist() {
+  if (!email.value) return;
+  try {
+    waitlistJoinStatus.value = "loading";
+    await WaitlistService.joinWaitlist(email.value);
+    email.value = "";
+    waitlistJoinStatus.value = "success";
+  } catch (error) {
+    console.error("Error joining waitlist:", error);
+    waitlistJoinStatus.value = "error";
+  }
 }
 </script>
 
@@ -500,11 +519,20 @@ function updateCarousel() {
                 <div class="flex flex-col lg:flex-row lg:gap-4 mt-2.5 lg:me-16">
                   <Input
                     aria-label="waitlist-label"
-                    class="mt-3 rounded-full shadow-none border-none p-6 bg-white h-14 placeholder:text-[rgba(51_65_85_0.5)]"
                     placeholder="your@email.com"
+                    class="mt-3 rounded-full shadow-none border-none p-6 bg-white h-14 placeholder:text-[rgba(51_65_85_0.5)]"
+                    :class="{
+                      'outline outline-green-500':
+                        waitlistJoinStatus === 'success',
+                      'outline outline-red-500': waitlistJoinStatus === 'error',
+                    }"
+                    :disabled="waitlistJoinStatus === 'loading'"
+                    v-model:model-value="email"
                   />
                   <Button
                     class="mt-4 p-6 bg-[var(--bg-dark)] rounded-full text-white w-fit"
+                    :disabled="waitlistJoinStatus === 'loading'"
+                    @click="onJoinWaitlist"
                   >
                     Join the Waitlist
                   </Button>
