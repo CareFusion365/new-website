@@ -218,7 +218,7 @@ import aboutHospitalBg from "@/assets/img/bg-3o.png";
             <div
               class="mt-8 lg:mt-8 flex flex-col lg:flex-row flex-wrap gap-x-6 gap-y-3 w-full"
             >
-              <div
+             <!-- <div
                 class="flex flex-col bg-[var(--bg-light)] rounded-2xl w-[calc(25% - 4rem)] lg:w-[26.33rem]"
               >
                 <img
@@ -230,7 +230,7 @@ import aboutHospitalBg from "@/assets/img/bg-3o.png";
                   <h4 class="subtitle text-[24px]">Elijah Ahianyo</h4>
                   <p class="text-[16px] text-[#334155CC]">Co-Founder</p>
                 </div>
-              </div>
+              </div> -->
               <div
                 class="flex flex-col bg-[var(--bg-light)] rounded-2xl w-[calc(25% - 4rem)] lg:w-[26.33rem]"
               >
@@ -241,7 +241,7 @@ import aboutHospitalBg from "@/assets/img/bg-3o.png";
                 />
                 <div class="p-4 space-y-2">
                   <h4 class="subtitle text-[24px]">Kwesi Frempong-Smart</h4>
-                  <p class="text-[16px] text-[#334155CC]">Co-Founder</p>
+                  <p class="text-[16px] text-[#334155CC]">CEO</p>
                 </div>
               </div>
               <!-- <div
